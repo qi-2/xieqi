@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #container{
+            width:1036px;
+            height:690px;
+            border:1px solid black;
+            /*背景图片*/
+            background-image: url("素材/1696679542981.jpg");
+            /*背景大小*/
+            background-size:100% 100%;
+            position: relative;
+            margin:0 auto;
+
+        }
+        #head{
+            position: absolute;
+            left:10px;
+            top:10px;
+        }
+        #k1{
+            position: absolute;
+            left:380px;
+            top:100px;
+            font-size:72px;
+            color:red;
+        }
+        #k2{
+            position: absolute;
+            left:400px;
+            top:550px;
+            font-size:48px;
+            color:white;
+        }
+        #k3{
+            position: absolute;
+            left:400px;
+            top:550px;
+            font-size:48px;
+            color:white;
+        }
+        #w1{
+            position: absolute;
+            left:400px;
+            top:240px;
+            height:80px;
+        }
+        #w2{
+            position: absolute;
+            left:400px;
+            top:440px;
+            height:80px;
+        }
+        </style>
+</head>
+<body>
+    <div id="container">
+        
+        <div id="head">
+            <img src="./素材/fanhui.png" alt="" width="65" height="65"> 
+        </div>
+        <textarea name =“textie” row="5" id="w1"></textarea>
+        <textarea name =“textie” row="5" id="w2"></textarea>
+        <div id="k1">
+            在线匹配
+            
+        </div>
+        
+        <div id="k2">
+            
+            开始匹配
+        </div>
+        <div id="k3">
+            匹配成功 
+            
+        </div>
+    </div>   
+</body>
+<script>
+    k3.style.display="none";
+    var returnBtn = document.querySelector("#head");
+    returnBtn.onclick = function(){
+        window.location.href='file:///C:/%E5%AD%A4%E6%B3%A8%E4%B8%80%E6%8E%B7/%E4%B8%BB%E9%A1%B5%E9%9D%A2.html';
+    }
+    var startBtn = document.querySelector("#k2");
+    startBtn.onclick = function(){
+        k2.style.display="none";
+        k3.style.display="block";
+        window.location.href='file:///C:/%E5%AD%A4%E6%B3%A8%E4%B8%80%E6%8E%B7/%E5%AF%B9%E6%88%98%E9%A1%B5%E9%9D%A2.html';
+    }
+</script>
+</html>

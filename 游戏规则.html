@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width:1036px;
+            height:690px;
+            border:1px solid black;
+            /*背景图片*/
+            background-image: url("素材/0015e77674b7604f-bdeab90afeb797a9-9c627037547bf967449a793d69a33c3e.jpg");
+            /*背景大小*/
+            background-size:100% 100%;
+            position: relative;
+            margin:0 auto;
+        }
+        #head{
+            position:absolute;
+            left:0;
+            top:0;
+        }
+        #g1{
+            position: absolute;
+            left:40px;
+            top:40px;
+            font-size:36px;
+            color:black;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+        }
+        #g2{
+            position: absolute;
+            left:40px;
+            top:120px;
+            font-size:36px;
+            color:black;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+        }
+        #g3{
+            position: absolute;
+            left:40px;
+            top:260px;
+            font-size:36px;
+            color:black;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+        }
+        #g4{
+            position: absolute;
+            left:40px;
+            top:400px;
+            font-size:36px;
+            color:black;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+        }
+        #g5{
+            position: absolute;
+            left:40px;
+            top:540px;
+            font-size:36px;
+            color:black;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="head">
+            <img src="./素材/fanhui_1.png" alt="" width="50" height="50">
+        </div>
+        <div id="g1">
+            进入游戏，选择游戏模式后,设置游戏局数和玩家个人筹码数.
+        </div>
+        <div id="g2">
+            每一局游戏内有三轮投掷机会,玩家一人一次轮流投掷骰子,每个玩家有5个骰子.
+        </div>
+        <div id="g3">
+            前两次投掷骰子之后可以选择锁定0~5个骰子,锁定的骰子位于选定区域不再改变.
+        </div>
+        <div id="g4">
+            前两轮每轮投掷结束并在所有玩家锁定骰子后,每位玩家可以选择增加倍率:0,1,2,3.选择完成后进入下一轮.
+        </div>
+        <div id="g5">
+            第三轮投掷结束后,所有玩家的全部骰子自动锁定并进行计分(得分为五个骰子的点数总和+奖励分),得出最终结果,筹码划分.
+        </div>
+           
+    </div>
+</body>
+<script>
+    var returnBtn = document.querySelector("#head");
+    returnBtn.onclick = function(){
+        window.location.href='file:///C:/%E5%AD%A4%E6%B3%A8%E4%B8%80%E6%8E%B7/%E4%B8%BB%E9%A1%B5%E9%9D%A2.html';
+    }
+</script>
+</html>

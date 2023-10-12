@@ -1,0 +1,178 @@
+// empController.java
+
+package com.example.controller;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.dao.empDao;
+import com.example.entity.Emp;
+import com.example.pojo.deleteParams;
+import com.example.pojo.listSearchCdt;
+import com.example.pojo.listSearchResult;
+import com.example.pojo.resultType;
+
+@RestController
+@RequestMapping("/emp")
+public class empController {
+  @Autowired empDao empDao;
+  
+   
+  @GetMapping("/test")
+  public String test(){
+      return "hhhh";
+  }
+  
+  @GetMapping("/all")
+  public resultType<List<Emp>> getAllEmp(){
+   resultType<List<Emp>> res=new resultType<>();
+   List<Emp> data=empDao.selectList(null);
+   try {
+     res.code=data!=null?200:201;
+     res.data=data;
+     res.message=data!=null?"查询所有记录成功":"查询所有记录失败";
+   } catch (Exception e) {
+     res.code=500;
+     res.error=e;
+     res.message="服务器繁忙!";
+   }
+   return res;
+  }
+
+  @PostMapping
+   public resultType<Boolean> addEmp(@RequestBody Emp emp){
+    resultType<Boolean> res=new resultType<>();
+    Boolean isSuccess=empDao.insert(emp)>0;
+    try {
+      res.code=isSuccess?200:201;
+      res.data=isSuccess;
+      res.message=isSuccess?"新增成功":"新增失败";
+    } catch (Exception e) {
+      res.code=500;
+      res.error=e;
+      res.message="服务器繁忙!";
+    }
+    return res;
+   }
+
+   @DeleteMapping
+   public resultType<Boolean> deleteEmp(@RequestBody deleteParams params){
+    resultType<Boolean> res=new resultType<>();
+    Boolean isSuccess=empDao.deleteById(params.id)>0;
+    try {
+     res.code=isSuccess?200:201;
+     res.data=isSuccess;
+     res.message=isSuccess?"删除成功":"删除失败";
+    } catch (Exception e) {
+      res.code=500;
+      res.error=e;
+      res.message="服务器繁忙!";
+    }
+    return res;
+   }
+
+   @PostMapping("/deleteMany")
+   public resultType<Boolean> deleteEmps(@RequestBody deleteParams params){
+    resultType<Boolean> res=new resultType<>();
+    Boolean isSuccess=empDao.deleteBatchIds(params.ids)>0;
+    try {
+     res.code=isSuccess?200:201;
+     res.data=isSuccess;
+     res.message=isSuccess?"批量删除成功":"批量删除失败";
+    } catch (Exception e) {
+      res.code=500;
+      res.error=e;
+      res.message="服务器繁忙!";
+    }
+    return res;
+   }
+   
+  @PutMapping
+   public resultType<Boolean> updateEmp(@RequestBody Emp emp){
+     resultType<Boolean> res=new resultType<>();
+     Boolean isSuccess=empDao.updateById(emp)>0;
+     
+     try {
+      res.code=isSuccess?200:201;
+      res.data=isSuccess;
+      res.message=isSuccess?"更新成功":"更新失败";
+     } catch (Exception e) {
+      res.code=500;
+      res.error=e;
+      res.message="服务器繁忙!";
+     }
+     return res;
+   }
+
+   @GetMapping("/{id}")
+   public resultType<Emp> getEmpById(@PathVariable Integer id){
+     resultType<Emp> res=new resultType<>();
+     Emp data=empDao.selectById(id);
+     try {
+      res.code=data!=null?200:201;
+      res.data=data;
+      res.message=data!=null?"查询单条记录成功":"查询单条记录失败";
+     } catch (Exception e) {
+      System.out.println(e);
+      res.code=500;
+      res.error=e;
+      res.message="服务器繁忙!";
+     }
+     return res;
+   }
+
+   @GetMapping("/detail")
+   public resultType<Emp> _getEmpById(Integer id){
+     resultType<Emp> res=new resultType<>();
+     Emp data=empDao.selectById(id);
+     try {
+      res.code=data!=null?200:201;
+      res.data=data;
+      res.message=data!=null?"查询单条记录成功":"查询单条记录失败";
+     } catch (Exception e) {
+      System.out.println(e);
+      res.code=500;
+      res.error=e;
+      res.message="服务器繁忙!";
+     }
+     return res;
+   }
+   
+
+
+  //  分页条件查询
+  @PostMapping("/page")
+   public resultType<listSearchResult<Emp>> getSearchEmpList(@RequestBody listSearchCdt cdt){
+    // System.out.println(cdt);
+    resultType<listSearchResult<Emp>> res=new resultType<>();
+     IPage<Emp> page=new Page<Emp>(cdt.page.page, cdt.page.size, true);
+     QueryWrapper<Emp> filterOptions=
+    //  new QueryWrapper<Emp>(cdt.filterOpions);
+     new QueryWrapper<Emp>();
+     filterOptions.like(cdt.filterOptions.name!=null,"emp_name",cdt.filterOptions.name).eq(cdt.filterOptions.age>0,"age", cdt.filterOptions.age).eq(cdt.filterOptions.salary>0, "salary", cdt.filterOptions.salary);
+     IPage<Emp> ipage=empDao.selectPage(page,filterOptions);
+     try {
+        listSearchResult<Emp> data= new listSearchResult<Emp>();
+        data.list=ipage.getRecords();
+        data.total=ipage.getTotal();
+        res.data=data;
+        res.message="分页条件查询成功";
+     } catch (Exception e) {
+      res.code=500;
+      res.error=e;
+      res.message="服务器繁忙!";
+     }
+     return res;
+   }
+}

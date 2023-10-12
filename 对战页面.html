@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #container{
+            width:1036px;
+            height:690px;
+            border:1px solid black;
+            /*背景图片*/
+            background-image: url("素材/0015e77674b7604f-bdeab90afeb797a9-9c627037547bf967449a793d69a33c3e.jpg");
+            /*背景大小*/
+            background-size:100% 100%;
+            position: relative;
+            margin:0 auto;
+        }
+        #head{
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        #head2{
+            position: absolute;
+            left:916px;
+            top:570px;
+        }
+        #d7{
+            position: absolute;
+            left:5px;
+            top:250px;
+        }
+        #d8{
+            position: absolute;
+            left:5px;
+            top:450px;
+        }
+        #key1{
+            position: absolute;
+            left:120px;
+            top:150px;
+            font-size:28px;
+            color:black;
+        }
+        #key2{
+            position: absolute;
+            left:120px;
+            top:250px;
+            font-size:28px;
+            color:black;
+        }
+        #key3{
+            position: absolute;
+            left:120px;
+            top:350px;
+            font-size:28px;
+            color:black;
+        }
+        #key4{
+            position: absolute;
+            left:120px;
+            top:450px;
+            font-size:28px;
+            color:black;
+        }
+        #key5{
+            position: absolute;
+            left:120px;
+            top:550px;
+            font-size:28px;
+            color:black;
+        }
+        #d1{
+            position: absolute;
+            left:250px;
+            top:150px;
+        }
+        #d2{
+            position: absolute;
+            left:310px;
+            top:150px;
+        }
+        #d3{
+            position: absolute;
+            left:370px;
+            top:150px;
+        }
+        #d4{
+            position: absolute;
+            left:430px;
+            top:150px;
+        }
+        #d5{
+            position: absolute;
+            left:490px;
+            top:150px;
+        }
+        #d6{
+            position: absolute;
+            left:550px;
+            top:150px;
+        }
+        #d9{
+            position: absolute;
+            left:10px;
+            top:600px;
+        }
+        #d10{
+            position: absolute;
+            left:980px;
+            top:400px;
+        }
+        </style>
+</head>
+<body>
+    <div id="container">
+        
+        <div id="head">
+            <img src="./素材/d322b06d951b02bc98852ece4170586.jpg" alt="" width="120" height="120" >   
+        </div>
+        <div id="head2">
+            <img src="./素材/1665799778232.jpg" alt="" width="120" height="120" >   
+        </div>
+        <div id="key1">
+            投掷区域
+        </div>
+        <div id="key2">
+             选定区域<form name =“test”><input type =“text”name =“textie”><form name =“test”><input type =“text”name =“textie”>
+        </div>
+        <div id="key3">
+            当前点数<form name =“test”><input type =“text”name =“textie”><form name =“test”><input type =“text”name =“textie”>
+        </div>
+        <div id="key4">
+            剩余局数<form name =“test”><input type =“text”name =“textie”><form name =“test”><input type =“text”name =“textie”>
+        </div>
+        <div id="key5">
+            当前总倍率<form name =“test”><input type =“text”name =“textie”><form name =“test”><input type =“text”name =“textie”>
+        </div>
+        <div id="d1">
+            <img src="./素材/dice.png" alt="" width="50" height="50" >   
+        </div>
+        <div id="d2">
+            <img src="./素材/dice_1.png" alt="" width="50" height="50" >   
+        </div>
+        <div id="d3">
+            <img src="./素材/dice_2.png" alt="" width="50" height="50" >   
+        </div>
+        <div id="d4">
+            <img src="./素材/dice_3.png" alt="" width="50" height="50" >   
+        </div>
+        <div id="d5">
+            <img src="./素材/dice_4.png" alt="" width="50" height="50" >   
+        </div>
+        <div id="d6">
+            <img src="./素材/dice_5.png" alt="" width="50" height="50" >   
+        </div>
+        <div id="d7">
+            <img src="./素材/tuoguan.png" alt="" width="50" height="50" >   
+        </div>
+        <div id="d8">
+            <img src="./素材/bianjishuru.png" alt="" width="50" height="50" >   
+        </div>
+        <div id="d9">
+            <img src="./素材/fanhui_1.png" alt="" width="60" height="60">
+        </div>
+        <div id="d10">
+            <img src="./素材/19结算.png" alt="" width="60" height="60">
+        </div>
+    </div>   
+</body>
+<script>
+    var returnBtn = document.querySelector("#d9");
+    returnBtn.onclick = function(){
+        window.location.href='file:///C:/%E5%AD%A4%E6%B3%A8%E4%B8%80%E6%8E%B7/%E4%B8%BB%E9%A1%B5%E9%9D%A2.html';
+    }
+    var bjBtn = document.querySelector("#d8");
+    bjBtn.onclick = function(){
+        window.location.href='file:///C:/%E5%AD%A4%E6%B3%A8%E4%B8%80%E6%8E%B7/%E5%B1%80%E6%95%B0%E5%92%8C%E7%AD%B9%E7%A0%81.html';
+    }
+    var jsBtn = document.querySelector("#d10");
+    jsBtn.onclick = function(){
+        window.location.href='file:///C:/%E5%AD%A4%E6%B3%A8%E4%B8%80%E6%8E%B7/%E7%BB%93%E7%AE%97.html';
+    }
+</script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #container{
+            width:1036px;
+            height:690px;
+            border:1px solid black;
+            /*背景图片*/
+            background-image: url("素材/1696679542981.jpg");
+            /*背景大小*/
+            background-size:100% 100%;
+            position: relative;
+            margin:0 auto;
+
+        }
+        #head{
+            position: absolute;
+            left:10px;
+            top:10px;
+        }
+        #phb{
+            position: absolute;
+            left:10px;
+            top:100px;
+        }
+        #k1{
+            position: absolute;
+            left:420px;
+            top:100px;
+            font-size:72px;
+            color:red;
+        }
+        #k2{
+            position: absolute;
+            left:450px;
+            top:350px;
+            font-size:48px;
+            color:red;
+        }
+        #w1{
+            position: absolute;
+            left:400px;
+            top:240px;
+            height:80px;
+        }
+        #w2{
+            position: absolute;
+            left:400px;
+            top:430px;
+            height:80px;
+        }
+        </style>
+</head>
+<body>
+    <div id="container">
+        
+        <div id="head">
+            <img src="./素材/fanhui.png" alt="" width="65" height="65"> 
+        </div>
+        <div id="phb">
+            <img src="./素材/paixingbang.png" alt="" width="65" height="65"> 
+        </div>
+        <div id="k1">
+            
+            结算
+            
+        </div>
+        
+        <div id="k2">
+            
+            VS
+            
+        </div>
+        <textarea name =“textie” row="5" id="w1"></textarea>
+        <textarea name =“textie” row="5" id="w2"></textarea>
+
+    </div>   
+</body>
+<script>
+    var returnBtn = document.querySelector("#head");
+    returnBtn.onclick = function(){
+        window.location.href='file:///C:/%E5%AD%A4%E6%B3%A8%E4%B8%80%E6%8E%B7/%E4%B8%BB%E9%A1%B5%E9%9D%A2.html';
+    }
+    var phbBtn = document.querySelector("#phb");
+    phbBtn.onclick = function(){
+        window.location.href='file:///C:/%E5%AD%A4%E6%B3%A8%E4%B8%80%E6%8E%B7/%E7%A7%AF%E5%88%86%E6%8E%92%E8%A1%8C%E6%A6%9C.html';
+    }
+</script>
+</html>

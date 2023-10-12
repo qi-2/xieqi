@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #container{
+            width:1036px;
+            height:690px;
+            border:1px solid black;
+            /*背景图片*/
+            background-image: url("素材/1696679542981.jpg");
+            /*背景大小*/
+            background-size:100% 100%;
+            position: relative;
+            margin:0 auto;
+
+        }
+        #head{
+            position: absolute;
+            left:400px;
+            top:540px;
+        }
+        #key{
+            position: absolute;
+            left:450px;
+            top:540px;
+            font-size:36px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        
+        <div id="head">
+            <img src="./素材/touzi.png" alt="" width="55" height="55"> 
+        </div>
+        <div id="key">
+            点击进入游戏
+        </div>
+        
+    </div>   
+</body>
+<script>
+    var startBtn = document.querySelector("#key");
+    startBtn.onclick = function(){
+        window.location.href='file:///C:/%E5%AD%A4%E6%B3%A8%E4%B8%80%E6%8E%B7/%E4%B8%BB%E9%A1%B5%E9%9D%A2.html';
+    }
+</script>
+</html>
